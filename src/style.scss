@@ -1,0 +1,129 @@
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@import url("https://api.fontshare.com/v2/css?f[]=chillax@500&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Chillax, sans-serif;
+    background-color: #152A38;
+    color: white;
+    padding: 10vh 15vw;
+    text-align: center;
+
+    @media screen and (orientation: portrait) {
+        padding: 5vh 5vw;
+    }
+}
+
+button {
+    background-color: transparent;
+    border-width: 0;
+    color: white;
+    font-family: Chillax, sans-serif;
+    cursor: pointer;
+}
+
+input[type="text"] {
+    display: inline-block;
+    padding: 5px;
+    background-color: #152A38;
+    border-width: 0;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    outline: none;
+
+    &:disabled {
+        opacity: 0.75;
+    }
+}
+
+.loading {
+    text-align: center;
+
+    i {
+        font-size: 42px;
+        animation: spin 1s infinite linear;
+    }
+}
+
+.info {
+    width: max-content;
+    margin: auto;
+    padding: 10px;
+    font-size: 18px;
+    color: red;
+    border: 1px solid;
+    border-radius: 5px;
+    animation-duration: 0.75s;
+    animation-name: bounceIn;
+}
+
+.title {
+    font-size: 50px;
+
+    @media screen and (orientation: portrait) {
+        font-size: 32px;
+    }
+}
+
+.loading,
+.info {
+    margin: 15px auto;
+}
+
+.box {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    margin-top: 15px;
+    border-radius: 15px;
+    background-color: #29435C;
+    font-size: 18px;
+
+    .label {
+        display: inline-block;
+        font-size: 20px;
+        margin: 5px;
+    }
+
+    input {
+        margin-bottom: 15px;
+    }
+
+    button {
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: #152A38;
+        border-radius: 5px;
+        font-size: 18px;
+        transition-property: transform;
+        transition-duration: 200ms;
+        margin-top: 15px;
+
+        &:active {
+            transform: translateY(2px);
+        }
+
+        &:disabled {
+            transform: translateY(0);
+            opacity: 0.75;
+            cursor: default;
+        }
+    }
+
+    @media screen and (orientation: portrait) {
+        display: flex;
+        font-size: 16px;
+    }
+}
